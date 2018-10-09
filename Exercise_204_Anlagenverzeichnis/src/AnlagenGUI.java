@@ -1,24 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author JoZuG
- */
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class AnlagenGUI extends javax.swing.JFrame {
 
     /**
      * Creates new form AnlagenGUI
      */
     private AnlagenModel model = new AnlagenModel();
+    private File f= new File("src\\anlagenverzeichnis.csv");
     
-    public AnlagenGUI() {
+    public AnlagenGUI() throws IOException {
         initComponents();
         anlagenTable.setModel(model);
         anlagenTable.setDefaultRenderer(Object.class, new TableCellRenderer());
+        model.load(f);
     }
 
     /**
@@ -111,7 +109,11 @@ public class AnlagenGUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AnlagenGUI().setVisible(true);
+                try {
+                    new AnlagenGUI().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(AnlagenGUI.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

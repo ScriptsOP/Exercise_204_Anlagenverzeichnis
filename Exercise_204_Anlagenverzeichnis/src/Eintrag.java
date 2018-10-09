@@ -1,7 +1,7 @@
 
 public class Eintrag {
     private String Bezeichnung;
-    private int ak;
+    private double ak;
     private double inbetriebnahme;
     private double nd;
     private double bishND;
@@ -10,7 +10,7 @@ public class Eintrag {
     private double afaDj;
     private double bw;
 
-    public Eintrag(String Bezeichnung, int ak, double inbetriebnahme, double nd, double bishND, double bishAfa, double wertVorAfa, double afaDj, double bw) {
+    public Eintrag(String Bezeichnung, double ak, double inbetriebnahme, double nd, double bishND, double bishAfa, double wertVorAfa, double afaDj, double bw) {
         this.Bezeichnung = Bezeichnung;
         this.ak = ak;
         this.inbetriebnahme = inbetriebnahme;
@@ -26,7 +26,7 @@ public class Eintrag {
         return Bezeichnung;
     }
 
-    public int getAk() {
+    public double getAk() {
         return ak;
     }
 
