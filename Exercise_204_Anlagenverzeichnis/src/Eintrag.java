@@ -1,5 +1,5 @@
 
-public class Anlagenverzeichnis {
+public class Eintrag {
     private String Bezeichnung;
     private int ak;
     private double inbetriebnahme;
@@ -8,8 +8,9 @@ public class Anlagenverzeichnis {
     private double bishAfa;
     private double wertVorAfa;
     private double afaDj;
+    private double bw;
 
-    public Anlagenverzeichnis(String Bezeichnung, int ak, double inbetriebnahme, double nd, double bishND, double bishAfa, double wertVorAfa, double afaDj) {
+    public Eintrag(String Bezeichnung, int ak, double inbetriebnahme, double nd, double bishND, double bishAfa, double wertVorAfa, double afaDj, double bw) {
         this.Bezeichnung = Bezeichnung;
         this.ak = ak;
         this.inbetriebnahme = inbetriebnahme;
@@ -18,6 +19,7 @@ public class Anlagenverzeichnis {
         this.bishAfa = bishAfa;
         this.wertVorAfa = wertVorAfa;
         this.afaDj = afaDj;
+        this.bw = bw;
     }
 
     public String getBezeichnung() {
@@ -50,5 +52,9 @@ public class Anlagenverzeichnis {
 
     public double getAfaDj() {
         return afaDj;
+    }
+
+    public double getBw() {
+        return bw;
     }
 }
